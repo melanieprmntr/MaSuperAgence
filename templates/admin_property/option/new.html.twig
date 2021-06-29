@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouvelles options
+{% endblock %}
+
+{% block body %}
+	<div class="container text-muted p-4 ">
+		<h1 class="text-center">Créer une nouvelle option</h1>
+
+		{{ include('admin_property/option/_form.html.twig') }}
+
+		<a href="{{ path('option_index') }}" class= "btn  mt-2">Retour à la liste d'option</a>
+	</div>
+
+{% endblock %}

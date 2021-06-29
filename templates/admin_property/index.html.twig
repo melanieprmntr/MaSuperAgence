@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Gérer les biens
+{% endblock %}
+
+{% block body %}
+
+
+	<div class="container mt-4 text-muted">
+		<h1 class="text-center">Gérer les biens</h1>
+		{% for message in app.flashes('success') %}
+			<div class=" container alert alert-success">
+				{{message}}
+			</div>
+		{% endfor %}
+
+		<table class="table table-striped text-muted">
+			<thead>
+				<tr>
+					<th>Titre</th>
+					<th>Actions</th>
+				</tr>
+			</thead>
+			<tbody>
+
+				{% for property in properties %}
+					<tr>
+						<td>{{property.title}}</td>
+						<td class="text-end">
+							<a href="{{path('admin_property.edit', {id:property.id})}}" class="btn btn-record">Editer</a>
+							<form method="post" action="{{path('admin_property.delete', {id:property.id})}}" style='display:inline-block' onsubmit="return confirm('Voulez-vous vraiment supprimer ce bien')">
+								<input type="hidden" name='_method' value="DELETE">
+								<input type="hidden" name='_token' value="{{csrf_token('delete'~ property.id)}}">
+								<button class="btn supr">Supprimer</button>
+							</form>
+						</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+
+		</table>
+		<div class="text-end">
+			<a href="{{path('admin_property.create')}}" class='btn'>
+				Créer une nouvelle annonce</a>
+		</div>
+	</div>
+{% endblock %}

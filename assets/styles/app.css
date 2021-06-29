@@ -1,0 +1,78 @@
+.btn{
+    background-color:#93E2F5;
+    color: white;
+}
+
+.supr{
+    background-color: #EE4E47;
+    color: white
+}
+
+.nav-link{
+    font-size: 18px;
+    font-weight:400;
+}
+
+.logout{
+    text-decoration: underline
+}
+
+.colC{
+    background-color: #E5F4F8
+}
+
+.colNC{
+    color: #769EA7
+}
+
+img{
+    width:100%;
+    
+}
+
+.text-show{
+
+    font-size: 4rem; 
+    font-weight: bold;
+}
+
+.card-index{
+    height: 350px;
+
+}
+
+.card-index img{
+    margin-bottom: 15px;
+    height:200px
+}
+
+.container-show{
+    background-color: #E5F4F8
+}
+
+#contactForm{
+
+    background-color: #E5F4F8
+}
+
+.btn-record{
+    background-color: #62A483 ;
+}
+
+input{
+    margin-top: 3px;
+  
+}
+
+label{
+    margin-top: 20px;
+}
+
+.active .page-link{
+    background-color: #769EA7!important;
+    color: #fff !important;
+}
+
+.page-link{
+    color: #769ea7 !important;
+}

@@ -1,0 +1,76 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}HomePage
+{% endblock %}
+
+{% block body %}
+	<div class="text-center text-muted bg-light">
+		<div class="container p-4 ">
+			<h1>Bienvenue sur MaSuperAgence</h1>
+
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil quae obcaecati, nostrum optio harum quos minima quaerat blanditiis quam corrupti ullam aperiam aliquid aliquam esse, itaque fugiat recusandae id iusto.</p>
+		</div>
+
+	</div>
+	<div class="container text-muted">
+		<h2 class="text-center mt-4">Nos derniers biens</h2>
+		<div class="row flex">
+
+			{% for property in properties %}
+				<div class="col-3">
+				{% include "property/_property.html.twig" %}
+					{# <div class="card card-index">
+						<div class="card-md-4">
+							<div class="col-mb-4">
+								{% if property.picture %}
+									<img src="{{ vich_uploader_asset(property, 'imageFile') | imagine_filter('meduim')}}" alt="card-img-top">
+								{% else %}
+									<img src="{{ '/images/empty.jpg' | imagine_filter('meduim')}}" alt="card-img-top" >
+								{% endif %}
+							</div>
+							<h5 class="card-title">
+								<a href="{{path('property.show', {'id':property.id})}}" class="text-info">{{ property.title}}
+								</a>
+							</h5>
+							<p class="card-text">
+								{{property.surface}}
+								m² -
+								{{property.city}}
+								({{property.postalCode}})
+							</p>
+							<div class="text-info" style='font-size: 2rem; font-weight: bold'>
+								{{property.formattedPrice}}€</div>
+						</div>
+					</div> #}
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+
+	<div class="container mt-4 ">
+		<div class="row flex text-center ">
+			<div class="col p-5 text-muted colC">
+				<h3>Nos horaires</h3>
+				<p>MaSuperAgence est ouverte du lundi au vendredi  de 10h à 18h.</p>
+			</div>
+			<div class="col p-5 colNC" >
+			<h3>Nous rencontrer</h3>
+			Nous sommes situé en plein centre ville, nous avons un parking visiteurs.
+			</div>
+
+		</div>
+
+		<div class="row flex text-center">
+			<div class="col p-5 colNC">
+				<h3>Nous rejoindre</h3>
+				<p>MaSuperAgence est attentive aux candidatures spontanées et s'aggrandit régulièrement.</p>
+			</div>
+			<div class="col p-5 text-muted p-5 colC" >
+			<h3>Nous contacter</h3>
+			Vous souhaitez vendre ou achetez un bien, contactez nous!
+			</div>
+
+		</div>
+	</div>
+
+{% endblock %}
